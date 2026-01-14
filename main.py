@@ -27,6 +27,13 @@ time.sleep(5)
 #fazer login
 # selecionar o campo de email
 
+pyautogui.click(x=-898, y=580) 
+pyautogui.write("email@email.com")
+pyautogui.press("tab")
+
+#digitar a senha
+pyautogui.write("senha1234")
+pyautogui.click(x=-943, y=752)
 
 
 
