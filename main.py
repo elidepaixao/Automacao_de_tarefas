@@ -68,35 +68,35 @@ for linha in tabela.index:
     # CAMPO 1: CÓDIGO DO PRODUTO
     ## Para acessar informações em tabelas do Python, use colchetes com a linha e coluna desejadas.
 
-    codigo = tabela.loc[linha, "codigo"]
-    pyautogui.write(str(codigo))
+    codigo = str(tabela.loc[linha, "codigo"])
+    pyautogui.write(codigo)
     pyautogui.press("tab")
     # CAMPO 2: MARCA DO PRODUTO
-    marca = tabela.loc[linha, "marca"]
-    pyautogui.write(str(marca))
+    marca = str(tabela.loc[linha, "marca"])
+    pyautogui.write(marca)
     pyautogui.press("tab")
     # CAMPO 3: TIPO DO PRODUTO
-    produto = tabela.loc[linha, "tipo"]
-    pyautogui.write(str(produto))
+    produto = str(tabela.loc[linha, "tipo"])
+    pyautogui.write(produto)
     pyautogui.press("tab")
     # CAMPO 4: CATEGORIA DO PRODUTO
-    categoria = tabela.loc[linha, "categoria"]
-    pyautogui.write(str(categoria))
+    categoria = str(tabela.loc[linha, "categoria"])
+    pyautogui.write(categoria)
     pyautogui.press("tab")
     #CAMPO 5: PREÇO UNITÁRIO DO PRODUTO
-    preco = tabela.loc[linha, "preco_unitario"]
-    pyautogui.write(str(preco))
+    preco = str(tabela.loc[linha, "preco_unitario"])
+    pyautogui.write(preco)
     pyautogui.press("tab")
     # CAMPO 6: CUSTO DO PRODUTO
-    custo = tabela.loc[linha, "custo"]
-    pyautogui.write(str(custo))
+    custo = str(tabela.loc[linha, "custo"])
+    pyautogui.write(custo)
     pyautogui.press("tab")
     # CAMPO 7: OBSERVAÇÕES (OPCIONAL)
     # Verifica se existe observação para o produto
     # Se a célula estiver vazia, o pandas retorna "nan
-    obs = tabela.loc[linha, "obs"]
+    obs = str(tabela.loc[linha, "obs"])
     if obs != "nan":
-        pyautogui.write(str(obs))
+        pyautogui.write(obs)
     pyautogui.press("tab")
     #enviar
     pyautogui.press("enter")
