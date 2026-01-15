@@ -1,11 +1,29 @@
+# Script Auxiliar para Desenvolvimento da Automação
+# ==================================================
+# Este script ajuda a identificar coordenadas do mouse e visualizar a estrutura dos dados.
+
+# Funcionalidades:
+# - Captura a posição atual do mouse na tela (coordenadas x, y)
+# - Exibe a estrutura da tabela de produtos para referência
+
+# Como usar:
+# 1. Execute o script
+# 2. Mova o mouse para o elemento desejado na tela
+# 3. Aguarde 5 segundos
+# 4. As coordenadas serão exibidas no console
+
 import pyautogui
 import time
+import pandas as pd
 
-# time.sleep(5)
-# print(pyautogui.position()) #visualiza a posição do mouse na tela
+# Aguarda 5 segundos para você posicionar o mouse 
+time.sleep(5)
+
+# Captura e exibe a posição atual do mouse (coordenadas x e y)
+# Use essas coordenadas no script principal para clicar no campo desejado
 
 
-#arquivo
+# ESTRUTURA DA TABELA DE PRODUTOS (PARA REFERÊNCIA)
 
 #  codigo       marca        tipo  categoria  preco_unitario  custo               obs
 # 0    MOLO000251    Logitech       Mouse          1           25.95    6.5               NaN
