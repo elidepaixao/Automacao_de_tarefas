@@ -40,21 +40,52 @@ pyautogui.click(x=701, y=569)
 tabela = pd.read_csv("produtos.csv")#atencao com o caminho do arquivo. como esta no mesmo lugar do codigo, nao precisa colocar o caminho completo
 print(tabela)
 
-#cadastrando os produtos:
-#para cada linha vamos cadastrar um produto
 
-for linha in tabela.index:
-    pyautogui.click(x=200, y=200) #clicar no campo nome do produto
-    pyautogui.write(tabela["nome"][linha])
+#codigo do produto
+
+for linha in tabela.index: #index corresponde as linhas da tabela, columns corresponde as colunas
+  ##cadastrando os produtos:
+  #primeiro verificar a posicao do click no primeiro campo:
+
+    pyautogui.click(x=591, y=290)
+    #em tabelas do python, para localizar uma informacao, coloca entre colchetes. Nesse exemplo, entre colchetes passa a linha e a coluna desejadas
+    
+    #codigo do produto
+    codigo = tabela.loc[linha, "codigo"]
+    pyautogui.write(str(codigo))
     pyautogui.press("tab")
-    pyautogui.write(str(tabela["valor"][linha]))
+    #marca do produto
+    marca = tabela.loc[linha, "marca"]
+    pyautogui.write(str(marca))
     pyautogui.press("tab")
-    pyautogui.write(str(tabela["quantidade"][linha]))
+    #tipo do produto
+    produto = tabela.loc[linha, "tipo"]
+    pyautogui.write(str(produto))
     pyautogui.press("tab")
-    pyautogui.write(tabela["categoria"][linha])
+    #categoria do produto
+    categoria = tabela.loc[linha, "categoria"]
+    pyautogui.write(str(categoria))
     pyautogui.press("tab")
-    pyautogui.press("enter") #clicar no botao cadastrar
-    time.sleep(2)
+    #preco unitario do produto
+    preco = tabela.loc[linha, "preco_unitario"]
+    pyautogui.write(str(preco))
+    pyautogui.press("tab")
+    #custo do produto
+    custo = tabela.loc[linha, "custo"]
+    pyautogui.write(str(custo))
+    pyautogui.press("tab")
+    #obs - usar o if para verificar se tem ou nao obs
+    obs = tabela.loc[linha, "obs"]
+    if obs != "nan":
+        pyautogui.write(str(obs))
+    pyautogui.press("tab")
+    #enviar
+    pyautogui.press("enter")
+
+    #voltar para o inicio do cadastro
+    pyautogui.scroll(5000) #numeros positivos, scroll para cima; negativos, scroll para baixo
+
+
 
 
 
