@@ -19,7 +19,7 @@ time.sleep(1)
 pyautogui.write("chrome")
 time.sleep(1)
 pyautogui.press("enter")
-time.sleep(3)
+time.sleep(5)
 pyautogui.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login")
 pyautogui.press("enter")
 time.sleep(5)
@@ -27,14 +27,34 @@ time.sleep(5)
 #fazer login
 # selecionar o campo de email
 
-pyautogui.click(x=-898, y=580) 
+
+pyautogui.click(x=663, y=399) 
 pyautogui.write("email@email.com")
 pyautogui.press("tab")
 
 #digitar a senha
 pyautogui.write("senha1234")
-pyautogui.click(x=-943, y=752)
+pyautogui.click(x=701, y=569)
 
+#abrindo a base de dados
+tabela = pd.read_csv("produtos.csv")#atencao com o caminho do arquivo. como esta no mesmo lugar do codigo, nao precisa colocar o caminho completo
+print(tabela)
+
+#cadastrando os produtos:
+#para cada linha vamos cadastrar um produto
+
+for linha in tabela.index:
+    pyautogui.click(x=200, y=200) #clicar no campo nome do produto
+    pyautogui.write(tabela["nome"][linha])
+    pyautogui.press("tab")
+    pyautogui.write(str(tabela["valor"][linha]))
+    pyautogui.press("tab")
+    pyautogui.write(str(tabela["quantidade"][linha]))
+    pyautogui.press("tab")
+    pyautogui.write(tabela["categoria"][linha])
+    pyautogui.press("tab")
+    pyautogui.press("enter") #clicar no botao cadastrar
+    time.sleep(2)
 
 
 
