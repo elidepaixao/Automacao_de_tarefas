@@ -12,6 +12,10 @@ Este projeto automatiza o processo repetitivo de cadastro de produtos em um sist
 4. Preencher e enviar formulários de cadastro para cada produto
 5. Processar centenas de produtos sem intervenção manual
 
+# Observacao:
+
+- Para finalizar a automacao, clicar no canto superior esquerdo da tela do navegador
+
 ##  Funcionalidades
 
 - **Login Automático**: Acessa o sistema e faz login com credenciais predefinidas
